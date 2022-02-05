@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct StudyPage: View {
+    @State var tabIndex: CGFloat? = 0
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             //标题栏
             HStack {
                 Image("tool_bar_left_icon")
@@ -38,6 +40,18 @@ struct StudyPage: View {
             }
             .AppBarStyle()
             
+            TabBarView(isScrollable: true, showIndicator: true, items: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"], selection: $tabIndex)
+                .frame(height: 55)
+                .background(Color.gray.opacity(0.1))
+                .onChange(of: tabIndex) { newValue in
+                    print(newValue ?? 0)
+                }
+            
+            TabBarView(isScrollable: true, showIndicator: false, items: ["相关资讯", "视频课程"], selection: $tabIndex)
+                .frame(height: 55)
+                .onChange(of: tabIndex) { newValue in
+                    print(newValue ?? 0)
+                }
             Spacer()
         }
     }

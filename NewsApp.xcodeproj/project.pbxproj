@@ -18,6 +18,7 @@
 		AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E027AE20E60016FA9E /* TaskPage.swift */; };
 		AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E227AE20F40016FA9E /* ProfilePage.swift */; };
 		AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */; };
+		AD7B76E927AE46B30016FA9E /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E827AE46B30016FA9E /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		AD7B76E027AE20E60016FA9E /* TaskPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPage.swift; sourceTree = "<group>"; };
 		AD7B76E227AE20F40016FA9E /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarModifier.swift; sourceTree = "<group>"; };
+		AD7B76E827AE46B30016FA9E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,7 @@
 			children = (
 				AD7B76B227AE205B0016FA9E /* NewsAppApp.swift */,
 				AD7B76B427AE205B0016FA9E /* ContentView.swift */,
-				AD7B76DC27AE20A80016FA9E /* Views */,
+				AD7B76DC27AE20A80016FA9E /* Module */,
 				AD7B76B627AE205D0016FA9E /* Assets.xcassets */,
 				AD7B76B827AE205D0016FA9E /* Preview Content */,
 			);
@@ -136,13 +138,14 @@
 			path = NewsAppUITests;
 			sourceTree = "<group>";
 		};
-		AD7B76DC27AE20A80016FA9E /* Views */ = {
+		AD7B76DC27AE20A80016FA9E /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				AD7B76E727AE46860016FA9E /* Views */,
 				AD7B76E427AE431B0016FA9E /* Modifiers */,
 				AD7B76DD27AE20B40016FA9E /* Pages */,
 			);
-			path = Views;
+			path = Module;
 			sourceTree = "<group>";
 		};
 		AD7B76DD27AE20B40016FA9E /* Pages */ = {
@@ -161,6 +164,14 @@
 				AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		AD7B76E727AE46860016FA9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B76E827AE46B30016FA9E /* TabBarView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 			files = (
 				AD7B76B527AE205B0016FA9E /* ContentView.swift in Sources */,
 				AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */,
+				AD7B76E927AE46B30016FA9E /* TabBarView.swift in Sources */,
 				AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */,
 				AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */,
 				AD7B76B327AE205B0016FA9E /* NewsAppApp.swift in Sources */,
@@ -465,6 +477,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -494,6 +507,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,7 +519,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
