@@ -14,6 +14,10 @@
 		AD7B76C427AE205D0016FA9E /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76C327AE205D0016FA9E /* NewsAppTests.swift */; };
 		AD7B76CE27AE205D0016FA9E /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76CD27AE205D0016FA9E /* NewsAppUITests.swift */; };
 		AD7B76D027AE205D0016FA9E /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76CF27AE205D0016FA9E /* NewsAppUITestsLaunchTests.swift */; };
+		AD7B76DF27AE20C90016FA9E /* StudyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76DE27AE20C90016FA9E /* StudyPage.swift */; };
+		AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E027AE20E60016FA9E /* TaskPage.swift */; };
+		AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E227AE20F40016FA9E /* ProfilePage.swift */; };
+		AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		AD7B76C927AE205D0016FA9E /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7B76CD27AE205D0016FA9E /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		AD7B76CF27AE205D0016FA9E /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD7B76DE27AE20C90016FA9E /* StudyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPage.swift; sourceTree = "<group>"; };
+		AD7B76E027AE20E60016FA9E /* TaskPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPage.swift; sourceTree = "<group>"; };
+		AD7B76E227AE20F40016FA9E /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 			children = (
 				AD7B76B227AE205B0016FA9E /* NewsAppApp.swift */,
 				AD7B76B427AE205B0016FA9E /* ContentView.swift */,
+				AD7B76DC27AE20A80016FA9E /* Views */,
 				AD7B76B627AE205D0016FA9E /* Assets.xcassets */,
 				AD7B76B827AE205D0016FA9E /* Preview Content */,
 			);
@@ -125,6 +134,33 @@
 				AD7B76CF27AE205D0016FA9E /* NewsAppUITestsLaunchTests.swift */,
 			);
 			path = NewsAppUITests;
+			sourceTree = "<group>";
+		};
+		AD7B76DC27AE20A80016FA9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B76E427AE431B0016FA9E /* Modifiers */,
+				AD7B76DD27AE20B40016FA9E /* Pages */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD7B76DD27AE20B40016FA9E /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B76DE27AE20C90016FA9E /* StudyPage.swift */,
+				AD7B76E027AE20E60016FA9E /* TaskPage.swift */,
+				AD7B76E227AE20F40016FA9E /* ProfilePage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		AD7B76E427AE431B0016FA9E /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7B76B527AE205B0016FA9E /* ContentView.swift in Sources */,
+				AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */,
+				AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */,
+				AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */,
 				AD7B76B327AE205B0016FA9E /* NewsAppApp.swift in Sources */,
+				AD7B76DF27AE20C90016FA9E /* StudyPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
