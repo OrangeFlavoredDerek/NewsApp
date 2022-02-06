@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StudyPage: View {
     @State var tabIndex: CGFloat? = 0
+    @State var currentPage: Int = 0
     
     var body: some View {
         VStack(spacing: 0) {
@@ -40,18 +41,29 @@ struct StudyPage: View {
             }
             .AppBarStyle()
             
-            TabBarView(isScrollable: true, showIndicator: true, items: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"], selection: $tabIndex)
+            TabBarView(isScrollable: true, showIndicator: true, items: ["思想政治", "法律法规", "职业道德", "诚信自律"], selection: $tabIndex)
                 .frame(height: 55)
                 .background(Color.gray.opacity(0.1))
                 .onChange(of: tabIndex) { newValue in
                     print(newValue ?? 0)
                 }
             
-            TabBarView(isScrollable: true, showIndicator: false, items: ["相关资讯", "视频课程"], selection: $tabIndex)
-                .frame(height: 55)
-                .onChange(of: tabIndex) { newValue in
-                    print(newValue ?? 0)
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack(spacing: 0) {
+                    TabBarView(isScrollable: true, showIndicator: false, items: ["相关资讯", "视频课程"], selection: $tabIndex)
+                        .frame(height: 55)
+                        .onChange(of: tabIndex) { newValue in
+                            print(newValue ?? 0)
+                    }
                 }
+                //            CarouselView()
+                //                .aspectRatio(7/3, contentMode: .fit)
+                SwiperView(items: [Image("banner1").resizable(), Image("banner2").resizable(), Image("banner3").resizable(), Image("banner4").resizable()], currentPage: $currentPage)
+                    .aspectRatio(7/3, contentMode: .fit)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+            }
+            
             Spacer()
         }
     }

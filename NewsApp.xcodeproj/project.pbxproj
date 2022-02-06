@@ -19,6 +19,10 @@
 		AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E227AE20F40016FA9E /* ProfilePage.swift */; };
 		AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */; };
 		AD7B76E927AE46B30016FA9E /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76E827AE46B30016FA9E /* TabBarView.swift */; };
+		AD7B76EB27AEA7520016FA9E /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76EA27AEA7520016FA9E /* CarouselView.swift */; };
+		AD7B76EF27AFAC0B0016FA9E /* Swiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76EE27AFAC0B0016FA9E /* Swiper.swift */; };
+		AD7B76F127AFAC2E0016FA9E /* SwiperControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76F027AFAC2E0016FA9E /* SwiperControl.swift */; };
+		AD7B76F327AFAC510016FA9E /* SwiperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76F227AFAC510016FA9E /* SwiperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		AD7B76E227AE20F40016FA9E /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarModifier.swift; sourceTree = "<group>"; };
 		AD7B76E827AE46B30016FA9E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		AD7B76EA27AEA7520016FA9E /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		AD7B76EE27AFAC0B0016FA9E /* Swiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swiper.swift; sourceTree = "<group>"; };
+		AD7B76F027AFAC2E0016FA9E /* SwiperControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiperControl.swift; sourceTree = "<group>"; };
+		AD7B76F227AFAC510016FA9E /* SwiperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				AD7B76E827AE46B30016FA9E /* TabBarView.swift */,
+				AD7B76EA27AEA7520016FA9E /* CarouselView.swift */,
+				AD7B76EE27AFAC0B0016FA9E /* Swiper.swift */,
+				AD7B76F027AFAC2E0016FA9E /* SwiperControl.swift */,
+				AD7B76F227AFAC510016FA9E /* SwiperView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,11 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7B76EB27AEA7520016FA9E /* CarouselView.swift in Sources */,
 				AD7B76B527AE205B0016FA9E /* ContentView.swift in Sources */,
 				AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */,
+				AD7B76F327AFAC510016FA9E /* SwiperView.swift in Sources */,
 				AD7B76E927AE46B30016FA9E /* TabBarView.swift in Sources */,
 				AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */,
 				AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */,
+				AD7B76EF27AFAC0B0016FA9E /* Swiper.swift in Sources */,
+				AD7B76F127AFAC2E0016FA9E /* SwiperControl.swift in Sources */,
 				AD7B76B327AE205B0016FA9E /* NewsAppApp.swift in Sources */,
 				AD7B76DF27AE20C90016FA9E /* StudyPage.swift in Sources */,
 			);
