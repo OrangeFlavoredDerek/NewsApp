@@ -10,6 +10,8 @@ import SwiftUI
 struct StudyPage: View {
     @State var tabIndex: CGFloat? = 0
     @State var currentPage: Int = 0
+    @State var showNewsList: Bool = true
+    @State var typeIndex: CGFloat? = 0
     
     var body: some View {
         VStack(spacing: 0) {
@@ -41,6 +43,7 @@ struct StudyPage: View {
             }
             .AppBarStyle()
             
+            //标签栏
             TabBarView(isScrollable: true, showIndicator: true, items: ["思想政治", "法律法规", "职业道德", "诚信自律"], selection: $tabIndex)
                 .frame(height: 55)
                 .background(Color.gray.opacity(0.1))
@@ -50,18 +53,27 @@ struct StudyPage: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 0) {
-                    TabBarView(isScrollable: true, showIndicator: false, items: ["相关资讯", "视频课程"], selection: $tabIndex)
+                    //标签栏
+                    TabBarView(isScrollable: true, showIndicator: false, items: ["相关资讯", "视频课程"], selection: $typeIndex)
                         .frame(height: 55)
-                        .onChange(of: tabIndex) { newValue in
-                            print(newValue ?? 0)
-                    }
+                        .onChange(of: typeIndex) { newValue in
+                            showNewsList = newValue == 0
+                        }
                 }
-                //            CarouselView()
-                //                .aspectRatio(7/3, contentMode: .fit)
+                
+                //轮播图
                 SwiperView(items: [Image("banner1").resizable(), Image("banner2").resizable(), Image("banner3").resizable(), Image("banner4").resizable()], currentPage: $currentPage)
                     .aspectRatio(7/3, contentMode: .fit)
                     .cornerRadius(12)
                     .padding(.horizontal)
+                
+                if showNewsList {
+                    ArticleListView(articles: [Article(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", mediaName: "人民日报", publishTime: "2020-02-10", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了"),
+                        Article(id: "1", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", mediaName: "人民日报", publishTime: "2020-02-10", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了"),
+                        Article(id: "2", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", mediaName: "人民日报", publishTime: "2020-02-10", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了")])
+                } else {
+                    VideoListView(videos: [VideoModel(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", duration: "10:00:00", imgURL: "https://d6n3s4g6.ssl.hwcdn.net/content/180716/0006_400.jpg")])
+                }
             }
             
             Spacer()
@@ -69,8 +81,8 @@ struct StudyPage: View {
     }
 }
 
-struct StudyPage_Previews: PreviewProvider {
-    static var previews: some View {
-        StudyPage()
-    }
-}
+//struct StudyPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StudyPage()
+//    }
+//}
