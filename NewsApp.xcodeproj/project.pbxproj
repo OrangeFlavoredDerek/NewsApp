@@ -28,6 +28,13 @@
 		AD7B76FB27AFBA2B0016FA9E /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76FA27AFBA2B0016FA9E /* VideoListView.swift */; };
 		AD7B76FD27AFBD6E0016FA9E /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76FC27AFBD6E0016FA9E /* VideoModel.swift */; };
 		AD7B76FF27B20DE80016FA9E /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B76FE27B20DE80016FA9E /* AsyncImage.swift */; };
+		AD7B770227B254280016FA9E /* OverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770127B254280016FA9E /* OverView.swift */; };
+		AD7B770527B2B1A90016FA9E /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770427B2B1A90016FA9E /* SizePreferenceKey.swift */; };
+		AD7B770727B2B2AD0016FA9E /* MeasureSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770627B2B2AD0016FA9E /* MeasureSizeModifier.swift */; };
+		AD7B770927B2BABF0016FA9E /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770827B2BABF0016FA9E /* RoundedCorners.swift */; };
+		AD7B770B27B3542C0016FA9E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770A27B3542C0016FA9E /* ChartView.swift */; };
+		AD7B770D27B398760016FA9E /* LineChartModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770C27B398750016FA9E /* LineChartModifier.swift */; };
+		AD7B770F27B3AC9C0016FA9E /* DailyTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7B770E27B3AC9C0016FA9E /* DailyTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		AD7B76FC27AFBD6E0016FA9E /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		AD7B76FE27B20DE80016FA9E /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		AD7B770027B21C210016FA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AD7B770127B254280016FA9E /* OverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverView.swift; sourceTree = "<group>"; };
+		AD7B770427B2B1A90016FA9E /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
+		AD7B770627B2B2AD0016FA9E /* MeasureSizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureSizeModifier.swift; sourceTree = "<group>"; };
+		AD7B770827B2BABF0016FA9E /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		AD7B770A27B3542C0016FA9E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		AD7B770C27B398750016FA9E /* LineChartModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartModifier.swift; sourceTree = "<group>"; };
+		AD7B770E27B3AC9C0016FA9E /* DailyTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +140,7 @@
 				AD7B770027B21C210016FA9E /* Info.plist */,
 				AD7B76B227AE205B0016FA9E /* NewsAppApp.swift */,
 				AD7B76B427AE205B0016FA9E /* ContentView.swift */,
+				AD7B770327B2B1720016FA9E /* PreferenceKey */,
 				AD7B76F627AFB4180016FA9E /* Model */,
 				AD7B76DC27AE20A80016FA9E /* Module */,
 				AD7B76B627AE205D0016FA9E /* Assets.xcassets */,
@@ -183,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				AD7B76E527AE43E00016FA9E /* AppBarModifier.swift */,
+				AD7B770627B2B2AD0016FA9E /* MeasureSizeModifier.swift */,
+				AD7B770C27B398750016FA9E /* LineChartModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -197,7 +214,11 @@
 				AD7B76F227AFAC510016FA9E /* SwiperView.swift */,
 				AD7B76FE27B20DE80016FA9E /* AsyncImage.swift */,
 				AD7B76F427AFB3720016FA9E /* ArticleListView.swift */,
+				AD7B770A27B3542C0016FA9E /* ChartView.swift */,
+				AD7B770E27B3AC9C0016FA9E /* DailyTaskView.swift */,
 				AD7B76FA27AFBA2B0016FA9E /* VideoListView.swift */,
+				AD7B770127B254280016FA9E /* OverView.swift */,
+				AD7B770827B2BABF0016FA9E /* RoundedCorners.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +238,14 @@
 				AD7B76FC27AFBD6E0016FA9E /* VideoModel.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		AD7B770327B2B1720016FA9E /* PreferenceKey */ = {
+			isa = PBXGroup;
+			children = (
+				AD7B770427B2B1A90016FA9E /* SizePreferenceKey.swift */,
+			);
+			path = PreferenceKey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,22 +378,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7B770927B2BABF0016FA9E /* RoundedCorners.swift in Sources */,
+				AD7B770227B254280016FA9E /* OverView.swift in Sources */,
 				AD7B76F927AFB44B0016FA9E /* Article.swift in Sources */,
 				AD7B76EB27AEA7520016FA9E /* CarouselView.swift in Sources */,
 				AD7B76FB27AFBA2B0016FA9E /* VideoListView.swift in Sources */,
 				AD7B76B527AE205B0016FA9E /* ContentView.swift in Sources */,
 				AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */,
+				AD7B770D27B398760016FA9E /* LineChartModifier.swift in Sources */,
 				AD7B76F327AFAC510016FA9E /* SwiperView.swift in Sources */,
 				AD7B76E927AE46B30016FA9E /* TabBarView.swift in Sources */,
 				AD7B76E627AE43E00016FA9E /* AppBarModifier.swift in Sources */,
 				AD7B76E327AE20F40016FA9E /* ProfilePage.swift in Sources */,
+				AD7B770F27B3AC9C0016FA9E /* DailyTaskView.swift in Sources */,
 				AD7B76F527AFB3720016FA9E /* ArticleListView.swift in Sources */,
+				AD7B770527B2B1A90016FA9E /* SizePreferenceKey.swift in Sources */,
 				AD7B76EF27AFAC0B0016FA9E /* Swiper.swift in Sources */,
 				AD7B76F127AFAC2E0016FA9E /* SwiperControl.swift in Sources */,
 				AD7B76FF27B20DE80016FA9E /* AsyncImage.swift in Sources */,
 				AD7B76B327AE205B0016FA9E /* NewsAppApp.swift in Sources */,
+				AD7B770B27B3542C0016FA9E /* ChartView.swift in Sources */,
 				AD7B76FD27AFBD6E0016FA9E /* VideoModel.swift in Sources */,
 				AD7B76DF27AE20C90016FA9E /* StudyPage.swift in Sources */,
+				AD7B770727B2B2AD0016FA9E /* MeasureSizeModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,6 @@ struct VideoListView: View {
     var body: some View {
         ForEach(videos) { video in
             HStack {
-                //                Image(video.imgURL)
-                //                    .resizable()
                 AsyncImage(video.imgURL) {
                     Text("loading")
                 }

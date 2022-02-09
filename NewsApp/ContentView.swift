@@ -20,6 +20,7 @@ struct ContentView: View {
                     Image("task_icon")
                     Text("任务")
                 }
+                .ignoresSafeArea()
             ProfilePage()
                 .tabItem {
                     Image("mine_icon")
