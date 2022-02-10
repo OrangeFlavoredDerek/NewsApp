@@ -13,6 +13,15 @@ struct StudyPage: View {
     @State var showNewsList: Bool = true
     @State var typeIndex: CGFloat? = 0
     
+    //分类ViewModel
+    @StateObject private var categoryVM = CategoryViewModel()
+    //分类数据
+    private var categories: [String] {
+        categoryVM.categories.map { category in
+            category.name
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             //标题栏
@@ -44,7 +53,7 @@ struct StudyPage: View {
             .AppBarStyle()
             
             //标签栏
-            TabBarView(isScrollable: true, showIndicator: true, items: ["思想政治", "法律法规", "职业道德", "诚信自律"], selection: $tabIndex)
+            TabBarView(isScrollable: true, showIndicator: true, items: categories, selection: $tabIndex)
                 .frame(height: 55)
                 .background(Color.gray.opacity(0.1))
                 .onChange(of: tabIndex) { newValue in

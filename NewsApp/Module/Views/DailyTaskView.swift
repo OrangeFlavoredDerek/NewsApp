@@ -29,9 +29,11 @@ struct DailyTaskView: View {
                 
                 Spacer()
                 
-                Button("已完成"){
-                    
-                }
+                Button(action: {
+                    isDone = true
+                }, label: {
+                    Text("已完成")
+                })
                 .font(Font.system(size: 14))
                 .padding(.horizontal)
                 .padding(.vertical, 5.0)

@@ -88,6 +88,7 @@ struct TaskPage: View {
                 }
             }
         }
+        .navigationBarHidden(true)
     }
     
     func getWeekDate() -> [String] {

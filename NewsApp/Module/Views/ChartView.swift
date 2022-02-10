@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-var userPoints: [CGFloat] = [0, 2, 6, 9.5, 10, 15, 5]
-
 //折线图
 struct ChartView: View {
     var lineHeight: CGFloat = 24//每一行的高度

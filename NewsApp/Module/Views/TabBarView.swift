@@ -52,6 +52,10 @@ struct TabBarSubView: View {
     let indicatorHeight: CGFloat = 2
     var itemWidth: CGFloat {//使元素等间距
         let screenWidth = UIScreen.main.bounds.width
+        if items.isEmpty {
+            return 0
+        }
+        
         if items.count > 4 {
             return screenWidth / 4
         } else {
