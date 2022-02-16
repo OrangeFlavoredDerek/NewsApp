@@ -14,3 +14,9 @@ struct Article: Codable, Identifiable {
     var publishTime: String
     var content: String
 }
+
+extension Article {
+    static func mock(id: String, title: String) -> Article {
+        Article(id: id, title: title, mediaName: "PeopleDaily", publishTime: "2022-02-16 00:00:00", content: "")
+    }
+}

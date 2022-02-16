@@ -10,6 +10,6 @@ import Alamofire
 
 struct CategoryService {
     func list<T: Codable>(completion: @escaping (ListCompletion<T>)) {
-        AF.request("http://192.168.8.103:8080/category/list").json(completion: completion)
+        AF.request("http://192.168.8.106:8080/category/list").json(completion: completion)
     }
 }

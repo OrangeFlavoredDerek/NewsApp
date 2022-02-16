@@ -59,11 +59,12 @@ struct StudyPage: View {
                 .onChange(of: tabIndex) { newValue in
                     print(newValue ?? 0)
                 }
+                .redacted(reason: categoryVM.loaded ? [] : .placeholder) //加载完成前出现占位符
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 0) {
                     //标签栏
-                    TabBarView(isScrollable: true, showIndicator: false, items: ["相关资讯", "视频课程"], selection: $typeIndex)
+                    TabBarView(isScrollable: true, showIndicator: false, items: categoryVM.types, selection: $typeIndex)
                         .frame(height: 55)
                         .onChange(of: typeIndex) { newValue in
                             showNewsList = newValue == 0
@@ -77,9 +78,7 @@ struct StudyPage: View {
                     .padding(.horizontal)
                 
                 if showNewsList {
-                    ArticleListView(articles: [Article(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", mediaName: "人民日报", publishTime: "2020-02-10", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了"),
-                        Article(id: "1", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", mediaName: "人民日报", publishTime: "2020-02-10", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了"),
-                        Article(id: "2", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", mediaName: "人民日报", publishTime: "2020-02-10", content: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了")])
+                    ArticleListView()
                 } else {
                     VideoListView(videos: [VideoModel(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", duration: "10:00:00", imgURL: "https://d6n3s4g6.ssl.hwcdn.net/content/180716/0006_400.jpg")])
                 }
