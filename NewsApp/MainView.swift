@@ -9,24 +9,28 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView {
-            StudyPage()
-                .tabItem {
-                    Image("study_icon")
-                    Text("学习")
-                }
-            TaskPage()
-                .tabItem {
-                    Image("task_icon")
-                    Text("任务")
-                }
-                .ignoresSafeArea()
-            ProfilePage()
-                .tabItem {
-                    Image("mine_icon")
-                    Text("我的")
-                }
+        NavigationView {
+            TabView {
+                StudyPage()
+                    .tabItem {
+                        Image("study_icon")
+                        Text("学习")
+                    }
+                TaskPage()
+                    .tabItem {
+                        Image("task_icon")
+                        Text("任务")
+                    }
+                    .ignoresSafeArea()
+                ProfilePage()
+                    .tabItem {
+                        Image("mine_icon")
+                        Text("我的")
+                    }
+            }
+            .hiddenNavigationBarStyle()
         }
+        .statusBar(hidden: true)
     }
 }
 
