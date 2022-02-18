@@ -20,6 +20,9 @@ class ArticleViewModel: ObservableObject {
     //新闻详情信息
     @Published private(set) var articleContent: String = ""
     
+    //WebView操作器
+    private(set) var webViewStore = WebViewStore()
+    
     private var offset = 1
     
     let htmlHeader = """
@@ -67,5 +70,11 @@ class ArticleViewModel: ObservableObject {
                 \(self.htmlFooter)
                 """
         }
+    }
+    
+    // MARK: 字体缩放
+    func zoom(value: Float) {
+        //0.5 0.75 1 1.25 1.75
+        webViewStore.coodinator?.zoom(zoom: value / 100)
     }
 }

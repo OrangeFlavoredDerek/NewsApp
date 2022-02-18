@@ -13,9 +13,12 @@ import WebKit
 struct WebView: UIViewRepresentable {
     var htmlString: String
     var baseURL: URL?
+    var store: WebViewStore
     
     func makeUIView(context: Context) -> WKWebView {
+        store.coodinator = context.coordinator
         let webView = WKWebView()
+        context.coordinator.wkWebView = webView
         
         return webView
     }
@@ -28,5 +31,25 @@ struct WebView: UIViewRepresentable {
     
     typealias UIViewType = WKWebView
     
+    func makeCoordinator() -> WebViewCoodinator {
+        WebViewCoodinator()
+    }
+}
+
+class WebViewCoodinator: NSObject {
+    var wkWebView: WKWebView?
     
+    func zoom(zoom: Float) {
+        let jsString =
+        """
+        document.querySelector(".articleContainer").style.zoom = \(zoom)
+        """
+        
+        // 执行javascript方法
+        wkWebView?.evaluateJavaScript(jsString, completionHandler: nil)
+    }
+}
+
+class WebViewStore: ObservableObject {
+    var coodinator: WebViewCoodinator?
 }

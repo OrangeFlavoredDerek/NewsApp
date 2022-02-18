@@ -16,6 +16,7 @@ struct MainView: View {
                         Image("study_icon")
                         Text("学习")
                     }
+                    .hiddenNavigationBarStyle()
                 TaskPage()
                     .tabItem {
                         Image("task_icon")
@@ -28,9 +29,8 @@ struct MainView: View {
                         Text("我的")
                     }
             }
-            .hiddenNavigationBarStyle()
         }
-        .statusBar(hidden: true)
+        //.statusBar(hidden: true)
     }
 }
 
