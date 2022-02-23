@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticleDetail: View {
-    @State var fontValue: Float = 100.0
+    @State var fontValue: Double = 100.0
     @State var isPresent: Bool = false
     @StateObject private var articleVM = ArticleViewModel()
     var id: String
@@ -49,8 +49,10 @@ struct ArticleDetail: View {
                 .padding()
                 .padding(.horizontal, 12)
             })
+            .loading(present: $articleVM.loaded)
             .onAppear {
                 articleVM.info(id: self.id)
+                fontValue = articleVM.articleFontSizeSetting * 100.0
             }
     }
 }

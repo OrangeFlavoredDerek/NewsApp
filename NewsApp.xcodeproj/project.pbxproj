@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD13183B27C5E085001E9371 /* LoadingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13183A27C5E085001E9371 /* LoadingViewModifier.swift */; };
 		AD41C76927B4BB8F00051F91 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41C76827B4BB8F00051F91 /* Category.swift */; };
 		AD41C76B27B4BBB900051F91 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41C76A27B4BBB900051F91 /* Response.swift */; };
 		AD41C76E27B4BCB800051F91 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41C76D27B4BCB800051F91 /* CategoryService.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD13183A27C5E085001E9371 /* LoadingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModifier.swift; sourceTree = "<group>"; };
 		AD41C76827B4BB8F00051F91 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AD41C76A27B4BBB900051F91 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AD41C76D27B4BCB800051F91 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				AD7B770C27B398750016FA9E /* LineChartModifier.swift */,
 				ADC9A48F27BE8A9300BDA148 /* HiddenNavigationBarModifier.swift */,
 				ADBB1F6A27BFBE1600AC969E /* BottomSheetViewModifier.swift */,
+				AD13183A27C5E085001E9371 /* LoadingViewModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				AD7B76F527AFB3720016FA9E /* ArticleListView.swift in Sources */,
 				AD7B770527B2B1A90016FA9E /* SizePreferenceKey.swift in Sources */,
 				ADDD561B27BD3A060099F4F2 /* ArrayExtension.swift in Sources */,
+				AD13183B27C5E085001E9371 /* LoadingViewModifier.swift in Sources */,
 				AD7B76EF27AFAC0B0016FA9E /* Swiper.swift in Sources */,
 				AD41C76927B4BB8F00051F91 /* Category.swift in Sources */,
 				AD7B76F127AFAC2E0016FA9E /* SwiperControl.swift in Sources */,

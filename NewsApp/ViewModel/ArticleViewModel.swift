@@ -20,6 +20,9 @@ class ArticleViewModel: ObservableObject {
     //新闻详情信息
     @Published private(set) var articleContent: String = ""
     
+    //新闻详情是否加载
+    @Published var loaded: Bool = false
+    
     //WebView操作器
     private(set) var webViewStore = WebViewStore()
     
@@ -45,6 +48,9 @@ class ArticleViewModel: ObservableObject {
                             </html>
                         """
     
+    // 字体大小存储配置
+    @AppStorage("ArticleFontSizeSetting") var articleFontSizeSetting: Double = 1.0
+    
     init() {
         list()
     }
@@ -59,6 +65,7 @@ class ArticleViewModel: ObservableObject {
     
     func info(id: String) {
         service.info(id: id) { (data: Article?, msg, code) in
+            self.loaded = true
             guard let article = data else {
                 return
             }
@@ -66,15 +73,16 @@ class ArticleViewModel: ObservableObject {
             //MARK: WebView 渲染 html，时间比较慢，在这个时间段的时候 loading 已经消失，导致产生一段时间的空白，尝试是否能解决这一段时间的空白
             self.articleContent = """
                 \(self.htmlHeader)
-                <div class="articleContainer">\(article.content)</div>
+                <div class="articleContainer" style="zoom:\(self.articleFontSizeSetting)">\(article.content)</div>
                 \(self.htmlFooter)
                 """
         }
     }
     
     // MARK: 字体缩放
-    func zoom(value: Float) {
+    func zoom(value: Double) {
         //0.5 0.75 1 1.25 1.75
         webViewStore.coodinator?.zoom(zoom: value / 100)
+        articleFontSizeSetting = value / 100
     }
 }

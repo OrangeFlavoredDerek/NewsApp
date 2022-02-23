@@ -39,7 +39,7 @@ struct WebView: UIViewRepresentable {
 class WebViewCoodinator: NSObject {
     var wkWebView: WKWebView?
     
-    func zoom(zoom: Float) {
+    func zoom(zoom: Double) {
         let jsString =
         """
         document.querySelector(".articleContainer").style.zoom = \(zoom)
