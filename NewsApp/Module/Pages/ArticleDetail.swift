@@ -50,6 +50,7 @@ struct ArticleDetail: View {
                 .padding(.horizontal, 12)
             })
             .loading(present: $articleVM.loaded)
+            .toast(present: $articleVM.showToast, message: $articleVM.message)
             .onAppear {
                 articleVM.info(id: self.id)
                 fontValue = articleVM.articleFontSizeSetting * 100.0

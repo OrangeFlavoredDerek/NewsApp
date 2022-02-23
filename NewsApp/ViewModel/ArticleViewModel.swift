@@ -23,6 +23,12 @@ class ArticleViewModel: ObservableObject {
     //新闻详情是否加载
     @Published var loaded: Bool = false
     
+    //详情加载失败
+    @Published var message: String = ""
+    
+    //是否显示toast
+    @Published var showToast: Bool = false
+    
     //WebView操作器
     private(set) var webViewStore = WebViewStore()
     
@@ -67,6 +73,8 @@ class ArticleViewModel: ObservableObject {
         service.info(id: id) { (data: Article?, msg, code) in
             self.loaded = true
             guard let article = data else {
+                self.message = "数据加载失败"
+                self.showToast = true
                 return
             }
             

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD13183B27C5E085001E9371 /* LoadingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13183A27C5E085001E9371 /* LoadingViewModifier.swift */; };
+		AD13183D27C6184A001E9371 /* ToastViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13183C27C6184A001E9371 /* ToastViewModifier.swift */; };
 		AD41C76927B4BB8F00051F91 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41C76827B4BB8F00051F91 /* Category.swift */; };
 		AD41C76B27B4BBB900051F91 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41C76A27B4BBB900051F91 /* Response.swift */; };
 		AD41C76E27B4BCB800051F91 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41C76D27B4BCB800051F91 /* CategoryService.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		AD13183A27C5E085001E9371 /* LoadingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModifier.swift; sourceTree = "<group>"; };
+		AD13183C27C6184A001E9371 /* ToastViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModifier.swift; sourceTree = "<group>"; };
 		AD41C76827B4BB8F00051F91 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AD41C76A27B4BBB900051F91 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AD41C76D27B4BCB800051F91 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				ADC9A48F27BE8A9300BDA148 /* HiddenNavigationBarModifier.swift */,
 				ADBB1F6A27BFBE1600AC969E /* BottomSheetViewModifier.swift */,
 				AD13183A27C5E085001E9371 /* LoadingViewModifier.swift */,
+				AD13183C27C6184A001E9371 /* ToastViewModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				AD7B76EB27AEA7520016FA9E /* CarouselView.swift in Sources */,
 				AD7B76FB27AFBA2B0016FA9E /* VideoListView.swift in Sources */,
 				AD41C77227B4C20E00051F91 /* Typealias.swift in Sources */,
+				AD13183D27C6184A001E9371 /* ToastViewModifier.swift in Sources */,
 				AD7B76B527AE205B0016FA9E /* MainView.swift in Sources */,
 				AD41C76B27B4BBB900051F91 /* Response.swift in Sources */,
 				AD7B76E127AE20E60016FA9E /* TaskPage.swift in Sources */,
