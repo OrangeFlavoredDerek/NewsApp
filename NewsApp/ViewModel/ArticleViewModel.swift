@@ -8,6 +8,26 @@
 import Foundation
 import SwiftUI
 
+let htmlHeader = """
+                        <html>
+                            <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+                            <style>
+                                img{
+                                   max-width: 100% !important;
+                                }
+                            </style>
+                            </head>
+                            <body>
+                    """
+
+let htmlFooter =
+                    """
+                        </body>
+                        </html>
+                    """
+
 class ArticleViewModel: ObservableObject {
     private var service = ArticleService()
     
@@ -33,26 +53,6 @@ class ArticleViewModel: ObservableObject {
     private(set) var webViewStore = WebViewStore()
     
     private var offset = 1
-    
-    let htmlHeader = """
-                            <html>
-                                <head>
-                                <meta charset="utf-8">
-                                <meta name="viewport" content="width=device-width,initial-scale=1.0">
-                                <style>
-                                    img{
-                                       max-width: 100% !important;
-                                    }
-                                </style>
-                                </head>
-                                <body>
-                        """
-    
-    let htmlFooter =
-                        """
-                            </body>
-                            </html>
-                        """
     
     // 字体大小存储配置
     @AppStorage("ArticleFontSizeSetting") var articleFontSizeSetting: Double = 1.0
@@ -80,9 +80,9 @@ class ArticleViewModel: ObservableObject {
             
             //MARK: WebView 渲染 html，时间比较慢，在这个时间段的时候 loading 已经消失，导致产生一段时间的空白，尝试是否能解决这一段时间的空白
             self.articleContent = """
-                \(self.htmlHeader)
+                \(htmlHeader)
                 <div class="articleContainer" style="zoom:\(self.articleFontSizeSetting)">\(article.content)</div>
-                \(self.htmlFooter)
+                \(htmlFooter)
                 """
         }
     }

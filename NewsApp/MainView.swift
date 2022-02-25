@@ -16,19 +16,21 @@ struct MainView: View {
                         Image("study_icon")
                         Text("学习")
                     }
-                    .hiddenNavigationBarStyle()
+                    //.hiddenNavigationBarStyle()
                 TaskPage()
                     .tabItem {
                         Image("task_icon")
                         Text("任务")
                     }
-                    .ignoresSafeArea()
+                    .edgesIgnoringSafeArea(.top)
                 ProfilePage()
                     .tabItem {
                         Image("mine_icon")
                         Text("我的")
                     }
             }
+            .hiddenNavigationBarStyle()
+            //.navigationBarTitleDisplayMode(.inline)
         }
         //.statusBar(hidden: true)
     }

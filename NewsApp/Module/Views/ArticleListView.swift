@@ -11,7 +11,7 @@ struct ArticleListView: View {
     @StateObject private var articleVM = ArticleViewModel()
     
     var body: some View {
-        ForEach(articleVM.articles) { article in
+        ForEach(articleVM.articles, id: \.self) { article in
             NavigationLink {
                 ArticleDetail(id: article.id)
             } label: {

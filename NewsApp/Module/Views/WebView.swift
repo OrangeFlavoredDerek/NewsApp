@@ -13,11 +13,13 @@ import WebKit
 struct WebView: UIViewRepresentable {
     var htmlString: String
     var baseURL: URL?
-    var store: WebViewStore
+    var store: WebViewStore?
+    var scrollHeight: Binding<CGFloat>?
     
     func makeUIView(context: Context) -> WKWebView {
-        store.coodinator = context.coordinator
+        store?.coodinator = context.coordinator
         let webView = WKWebView()
+        webView.navigationDelegate = context.coordinator
         context.coordinator.wkWebView = webView
         
         return webView
@@ -32,13 +34,19 @@ struct WebView: UIViewRepresentable {
     typealias UIViewType = WKWebView
     
     func makeCoordinator() -> WebViewCoodinator {
-        WebViewCoodinator()
+        WebViewCoodinator(self)
     }
 }
 
-class WebViewCoodinator: NSObject {
+class WebViewCoodinator: NSObject, WKNavigationDelegate {
     var wkWebView: WKWebView?
+    var parent: WebView
     
+    init(_ parent: WebView) {
+        self.parent = parent
+    }
+    
+    //字体大小缩放
     func zoom(zoom: Double) {
         let jsString =
         """
@@ -47,6 +55,32 @@ class WebViewCoodinator: NSObject {
         
         // 执行javascript方法
         wkWebView?.evaluateJavaScript(jsString, completionHandler: nil)
+    }
+    
+    //获取高度
+    private func getScrollHeight() {
+        let jsString =
+            """
+            document.querySelector(".videoContainer").clientHeight
+            """
+        
+        wkWebView?.evaluateJavaScript(jsString, completionHandler: { result, error in
+            guard let height = result else {
+                return
+            }
+            self.disableScroll()
+            self.parent.scrollHeight?.wrappedValue = height as? CGFloat ?? 0
+        })
+    }
+    
+    //禁止webview滚动
+    func disableScroll() {
+        wkWebView?.scrollView.isScrollEnabled = false
+        wkWebView?.scrollView.panGestureRecognizer.isEnabled = false
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        getScrollHeight()
     }
 }
 

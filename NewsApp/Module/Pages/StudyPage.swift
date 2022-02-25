@@ -80,7 +80,7 @@ struct StudyPage: View {
                 if showNewsList {
                     ArticleListView()
                 } else {
-                    VideoListView(videos: [VideoModel(id: "0", title: "人社部向疫情防控期参与复工复产的劳动者表达敬佩： 您辛苦了", duration: "10:00:00", imgURL: "https://d6n3s4g6.ssl.hwcdn.net/content/180716/0006_400.jpg")])
+                    VideoListView()
                 }
             }
             
