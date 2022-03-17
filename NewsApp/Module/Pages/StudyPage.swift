@@ -13,6 +13,9 @@ struct StudyPage: View {
     @State var showNewsList: Bool = true
     @State var typeIndex: CGFloat? = 0
     
+    //用户ViewModel
+    @EnvironmentObject var userVM: UserViewModel
+    
     //分类ViewModel
     @StateObject private var categoryVM = CategoryViewModel()
     //分类数据
@@ -21,6 +24,10 @@ struct StudyPage: View {
             category.name
         }
     }
+    
+    //是否出发登陆页跳转
+    @State var showLogin: Bool = false
+    @State var showPointDetail: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -41,11 +48,23 @@ struct StudyPage: View {
                 .background(Color.white.opacity(0.3))
                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 
-                HStack {
-                    Text("学习\n进度")
-                    Text("100%")
+                NavigationLink(destination: LoginView(), isActive: $showPointDetail) {
+                    HStack {
+                        Text("学习\n进度")
+                        Text(userVM.isLogged ? "100%" : "0%")
+                    }
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        if !userVM.isLogged {
+                            //未登录，跳转到登录页
+                            showLogin.toggle()
+                            //userVM.signIn(completion: () -> ())
+                        } else {
+                            //已登录，跳转到积分详情页
+                            showPointDetail.toggle()
+                        }
+                    }
                 }
-                .foregroundColor(.white)
                 
                 Image(systemName: "bell")
                 
@@ -83,9 +102,9 @@ struct StudyPage: View {
                     VideoListView()
                 }
             }
-            
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 

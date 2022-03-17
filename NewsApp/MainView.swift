@@ -32,7 +32,6 @@ struct MainView: View {
             .hiddenNavigationBarStyle()
             //.navigationBarTitleDisplayMode(.inline)
         }
-        //.statusBar(hidden: true)
     }
 }
 

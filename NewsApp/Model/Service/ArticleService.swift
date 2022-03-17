@@ -10,10 +10,10 @@ import Alamofire
 
 struct ArticleService {
     func list<T: Codable>(offset: Int, completion: @escaping ListCompletion<T>) {
-        AF.request("http://192.168.8.106:8080/article/list?offset=\(offset)").json(completion: completion)
+        AF.request("http://172.20.10.3:8080/article/list?offset=\(offset)").json(completion: completion)
     }
     
     func info<T: Codable>(id: String, completion: @escaping DataCompletion<T>) {
-        AF.request("http://192.168.8.106:8080/article/info?id=\(id)").json(completion: completion)
+        AF.request("http://172.20.10.3:8080/article/info?id=\(id)").json(completion: completion)
     }
 }
