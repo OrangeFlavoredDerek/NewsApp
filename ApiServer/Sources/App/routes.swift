@@ -2,6 +2,7 @@ import Vapor
 
 func routes(_ app: Application) throws {
     app.get { req in
+        
         return "It works!"
     }
 
@@ -32,6 +33,7 @@ func routes(_ app: Application) throws {
     
     //视频
     let videoController = VideoController()
+    //let videoController = BiliVideoController()
     
     app.group("video") {
         $0.get("list", use: videoController.list)

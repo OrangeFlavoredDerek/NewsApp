@@ -11,10 +11,12 @@ import Combine
 struct AsyncImage<PlaceHolder: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeHolder: PlaceHolder
+    //private var url: URL?
     
     init(_ url: String, @ViewBuilder placeHolder: ()-> PlaceHolder) {
         self.placeHolder = placeHolder()
         _loader = StateObject(wrappedValue: ImageLoader(url: url))
+        //self.url = URL(string: url) ?? nil
     }
     
     var body: some View {

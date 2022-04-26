@@ -17,7 +17,7 @@ struct SwiperView<SwiperItem:View>:View {
     var body: some View{
         ZStack(alignment:.bottom) {
             Swiper(items: items, currentPage: $currentPage)
-            SwiperControl(numOfPages: items.count, currentPage: $currentPage)
+            SwiperController(numOfPages: items.count, currentPage: $currentPage)
         }
         .aspectRatio(7/3,contentMode: .fit)
         .onReceive(timer, perform: { _ in

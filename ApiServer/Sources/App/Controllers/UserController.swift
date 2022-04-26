@@ -11,6 +11,7 @@ import Vapor
 // 注册、登录
 //
 class UserController{
+    //用户登陆
     func signIn(req: Request) -> String {
         let content = try? req.content.decode(SignInInput.self)
         guard let userName = content?.userName,let password = content?.password else {
@@ -27,6 +28,7 @@ class UserController{
         return ResponseWrapper(code: .success, data: data).makeResponse()
     }
     
+    //用户注册
     func signUp(req: Request) -> String {
         let content = try? req.content.decode(User.self)
         guard let userName = content?.userName,let password = content?.password, let nickName = content?.nickName else {

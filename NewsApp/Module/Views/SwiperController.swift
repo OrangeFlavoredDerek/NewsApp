@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct SwiperControl:UIViewRepresentable {
+struct SwiperController:UIViewRepresentable {
+    var numOfPages:Int
+    // 轮播控制器当前页
+    @Binding var currentPage:Int
+    
+    // 创建协调器
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
-    var numOfPages:Int
-    @Binding var currentPage:Int
-    
+    // 创建controller
     func makeUIView(context: Context) -> UIPageControl {
         let control = UIPageControl()
         control.numberOfPages = numOfPages
@@ -29,9 +32,9 @@ struct SwiperControl:UIViewRepresentable {
     typealias UIViewType = UIPageControl
     
     class Coordinator: NSObject {
-        var parent:SwiperControl
+        var parent:SwiperController
         
-        init(_ parent:SwiperControl) {
+        init(_ parent:SwiperController) {
             self.parent = parent
         }
         

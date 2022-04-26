@@ -29,8 +29,6 @@ struct WebView: UIViewRepresentable {
         uiView.loadHTMLString(htmlString, baseURL: baseURL)
     }
     
-    
-    
     typealias UIViewType = WKWebView
     
     func makeCoordinator() -> WebViewCoodinator {

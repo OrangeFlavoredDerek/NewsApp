@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct Swiper<SwiperItem:View>:UIViewControllerRepresentable {
+struct Swiper<SwiperItem:View>: UIViewControllerRepresentable {
     
-    @Binding private var currentPage:Int
+    @Binding private var currentPage: Int
     private var items:[SwiperItem]
     
     init(items:[SwiperItem],currentPage:Binding<Int>) {

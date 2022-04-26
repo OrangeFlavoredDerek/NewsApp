@@ -8,8 +8,8 @@ let package = Package(
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://gitee.com/RandyWei/vapor.git", .revision("7a955f71076346e646b737c650c056e46308b1a2")),
-        .package(url: "https://gitee.com/wbingo/Kanna.git", from: "5.2.4")
+        .package(url: "https://github.com/vapor/vapor.git", .revision("4.57.0")),
+        .package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.7")
     ],
     targets: [
         .target(
