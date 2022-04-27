@@ -15,8 +15,7 @@ class ArticleController {
             return ResponseWrapper<DefaultResponseObj>(code: .failedParamError).makeFutureResponse(req: req)
         }
         
-        let limit: Int = 100
-        let urlString = "https://i.news.qq.com/trpc.qqnews_web.kv_srv.kv_srv_http_proxy/list?sub_srv_id=24hours&srv_id=pc&offset=\(offset)&limit=\(limit)&strategy=1&ext=%7B%22pool%22:%5B%22top%22%5D,%22is_filter%22:7,%22check_type%22:true%7D"
+        let urlString = "https://i.news.qq.com/trpc.qqnews_web.kv_srv.kv_srv_http_proxy/list?sub_srv_id=24hours&srv_id=pc&offset=\(offset)&limit=20&strategy=1&ext={%22pool%22:[%22top%22],%22is_filter%22:7,%22check_type%22:true}"
         
         return req.client.get(URI(string: urlString)).map { res in
             

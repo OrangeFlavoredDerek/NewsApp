@@ -5,7 +5,7 @@ var env = try Environment.detect()
 try LoggingSystem.bootstrap(from: &env)
 let app = Application(env)
 //配置本地地址
-app.http.server.configuration.hostname = "192.168.0.101"
+app.http.server.configuration.hostname = ""
 //app.http.server.configuration.port = 23
 defer { app.shutdown() }
 try configure(app)

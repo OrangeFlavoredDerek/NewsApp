@@ -7,26 +7,25 @@
 
 import Foundation
 
-struct VideoJsonWrapper: Codable {
-    var data: [Video4Eyuyan]
+struct VideoJsonWrapper:Codable {
+    var data: [Video]
 }
 
 struct DataWrapper:Codable {
-    var videos:[Video4Eyuyan]
+    var videos:[Video]
 }
 
-struct Video4Eyuyan: Codable {
+struct Video:Codable {
     var name: String
-    var typeid: String
-    var cover: String
+    var typeid:String
+    var cover:String
 }
 
-
-struct Video4App: Codable {
-    var title: String
-    var imgUrl: String
-    var duration: String
-    var id: String
-    var video: String
-    var desc: String
+struct Video4App:Codable {
+    var title:String
+    var imgUrl:String
+    var duration:String
+    var id:String
+    var video:String
+    var desc:String
 }
